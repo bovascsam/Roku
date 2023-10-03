@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+//using System.Linq;
+//using System.Net;
 using System.Threading.Tasks;
-using System.Text.Json.Serialization;
+//using System.Text.Json.Serialization;
 using System.IO;
 using Octokit;
 using Amazon.Lambda.Core;
@@ -11,10 +11,12 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.Lambda.Serialization.Json;
+using System.Net;
 
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+[assembly: LambdaSerializer(typeof(JsonSerializer))]
 
 // If you rename this namespace, you will need to update the invocation shim
 // to match if you intend to test the function with 'amplify mock function'
