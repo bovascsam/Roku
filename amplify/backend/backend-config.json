@@ -1,4 +1,20 @@
 {
+  "api": {
+    "jsonfile": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "ServerLessCreatejsonfile"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "function": {
     "ServerLessCreatejsonfile": {
       "build": true,
@@ -6,18 +22,20 @@
       "service": "Lambda"
     }
   },
-  "api": {
-    "jsonfile": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
+  "parameters": {
+    "AMPLIFY_function_ServerLessCreatejsonfile_deploymentBucketName": {
+      "usedBy": [
         {
           "category": "function",
-          "resourceName": "ServerLessCreatejsonfile",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
+          "resourceName": "ServerLessCreatejsonfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_ServerLessCreatejsonfile_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ServerLessCreatejsonfile"
         }
       ]
     }
